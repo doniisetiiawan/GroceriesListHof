@@ -1,21 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
-function HomeScreen() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
+import ShoppingList from './screens/shoppingList';
 
 const Stack = createStackNavigator();
 
@@ -23,7 +9,13 @@ function Apps() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="ShoppingList"
+          component={ShoppingList}
+          options={{
+            title: 'My Groceries List',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
